@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\Student;
+use PHPUnit\Framework\MockObject\Builder\Stub;
 
 class StudentController extends Controller
 {
@@ -13,7 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+        return view('student',['students' =>$students, 'layout'=>'index']);
     }
 
     /**
@@ -23,7 +26,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $students = Student::all();
+        return view('student',['students' =>$students, 'layout'=>'create']);
     }
 
     /**
@@ -34,7 +38,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student();
+        $student->cne = $request->input('Cne');
+        $student->FirstName = $request->input('FirstName');
+        $student->SecondName = $request->input('SecondName');
+        $student->Age = $request->input('Age');
+        $student->Speciality = $request->input('Speciality');
+        $student->save();
+        return redirect('/');
+
     }
 
     /**
@@ -45,7 +57,9 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::all($id);
+        $students = Student::all();
+        return view('student', ['students' =>$students, 'student'=>$student, 'layout'=>'show']);
     }
 
     /**
@@ -56,7 +70,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        $students = Student::all();
+        return view('student', ['students' =>$students, 'student'=>$student, 'layout'=>'edit']);
     }
 
     /**
@@ -68,7 +84,14 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::find($id);
+        $student->Cne = $request->input('Cne') ;
+        $student->FirstName = $request->input('FirstName') ;
+        $student->SecondName = $request->input('SecondName') ;
+        $student->Age = $request->input('Age') ;
+        $student->Speciality = $request->input('Speciality') ;
+        $student->save() ;
+        return redirect('/') ;
     }
 
     /**
@@ -79,6 +102,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect('/');
     }
 }
