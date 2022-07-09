@@ -11,10 +11,11 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    @include("navbar")
 
     @if($layout =='index')
 
-        <div class="container-fluid">
+        <div class="container-fluid mt-4">
           <div class="row">
             <section class="col-md-7">
               @include("studentslist")
@@ -51,7 +52,7 @@
                   <label >Speciality</label>
                   <input name="Speciality" type="text" class="form-control" placeholder="Enter your Speciality">
                 </div>
-                <input type="submit" class="btn btn-info" value="submit">
+                <input type="submit" class="btn btn-info" value="save">
                 <input type="reset" class="btn btn-warning" value="reset">
                 
               </form>
@@ -59,16 +60,16 @@
           </div>  
         </div>
     @elseif($layout == 'show')
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
           <div class="row">
-            <section class="col">
+            <section class="col md-7">
               @include("studentslist")
             </section>
-            <section class="col"></section>
+            <section class="col md-5"></section>
           </div>  
         </div>
     @elseif($layout == 'edit')
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
           <div class="row">
             <section class="col-md-7">
               @include("studentslist")
