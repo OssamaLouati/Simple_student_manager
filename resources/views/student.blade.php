@@ -24,7 +24,7 @@
           </div>  
         </div>
     @elseif($layout == 'create')
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
           <div class="row">
             <section class="col-md-7">
               @include("studentslist")
