@@ -19,9 +19,8 @@
       <td>{{$student->Age}}</td>
       <td>{{$student->Speciality}}</td>
       <td>
-          <a href="#" class="btn-sm btn-info">Show</a>
-          <a href="{{ url('/edit/'.$student->id) }}" class="btn-sm btn-info">Edit</a>
-          <a href="{{ url('/delete/'.$student->id) }}" class="btn-sm btn-info">delete</a>
+          <a href="{{ url('/edit/'.$student->id) }}" class="btn-sm btn-warning">Edit</a>
+          <a href="{{ url('/delete/'.$student->id) }}" class="btn-sm btn-danger">delete</a>
       </td>
     </tr>
     @endforeach

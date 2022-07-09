@@ -16,19 +16,19 @@
 
         <div class="container-fluid">
           <div class="row">
-            <section class="col">
+            <section class="col-md-7">
               @include("studentslist")
             </section>
-            <section class="col"></section>
+            <section class="col-md-5"></section>
           </div>  
         </div>
     @elseif($layout == 'create')
     <div class="container-fluid">
           <div class="row">
-            <section class="col">
+            <section class="col-md-7">
               @include("studentslist")
             </section>
-            <section class="col">
+            <section class="col-md-5">
               <form action="{{ url('/store') }}" method="post">
                 @csrf
                 <div class="form-group">
@@ -52,7 +52,7 @@
                   <input name="Speciality" type="text" class="form-control" placeholder="Enter your Speciality">
                 </div>
                 <input type="submit" class="btn btn-info" value="submit">
-                <input type="reset" class="btn btn-info" value="reset">
+                <input type="reset" class="btn btn-warning" value="reset">
                 
               </form>
             </section>
@@ -70,10 +70,10 @@
     @elseif($layout == 'edit')
     <div class="container-fluid">
           <div class="row">
-            <section class="col">
+            <section class="col-md-7">
               @include("studentslist")
             </section>
-            <section class="col">
+            <section class="col-md-5">
             <form action="{{ url('/update/'.$student->id) }}" method="post">
                 @csrf
                 <div class="form-group">
@@ -97,7 +97,7 @@
                   <input value="{{ $student->Speciality}}" name="Speciality" type="text" class="form-control" placeholder="Enter your Speciality">
                 </div>
                 <input type="submit" class="btn btn-info" value="update">
-                <input type="reset" class="btn btn-info" value="reset">
+                <input type="reset" class="btn btn-warning" value="reset">
                 
               </form>
             </section>
