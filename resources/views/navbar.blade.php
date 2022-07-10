@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div  class="navbar-nav ml-auto">
       <a class="nav-item nav-link active" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="{{ url('/create') }}">Add Student</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
